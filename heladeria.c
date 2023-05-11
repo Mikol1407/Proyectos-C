@@ -1,3 +1,11 @@
+    	//En una heladería se tienen 4 tipos de empleados ordenados con su número
+	//identificador y salario diario correspondiente: 1 - cajero (25$/día), 2 - servidor 
+	//(40$/día), 3 - preparador de mezclas (45$/día) y 4 - mantenimiento (30$/día).
+	//El dueño de la tienda desea tener un programa donde solo ingrese dos números 
+	//enteros que representen al número identificador del empleado y la cantidad de días 
+	//que trabajó en la semana (6 días máximos), y el programa le mostrará por pantalla la 
+	//cantidad en Bolívares y en Bolívares Fuertes que el dueño le debe pagar al empleado que ingresó
+
 #include <stdio.h>
 
 #define caj 25
