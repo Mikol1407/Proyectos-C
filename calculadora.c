@@ -22,24 +22,23 @@ int main () {
     case 1:
         scnum (&num1, &num2);
         resultado = sum (num1, num2);
-        printf ("El resultado de la suma es: %f\n", resultado);
+        printf ("El resultado de la suma es: %.2f\n", resultado);
         break;
     case 2:
         scnum (&num1, &num2);
         resultado = rest (num1, num2);
-        printf ("El resultado de la resta es: %f\n", resultado);
+        printf ("El resultado de la resta es: %.2f\n", resultado);
         break;
     case 3:
         scnum (&num1, &num2);
         resultado = mul (num1, num2);
-        printf ("El resultado de la multiplicacion es: %f\n", resultado);
+        printf ("El resultado de la multiplicacion es: %.2f\n", resultado);
         break;
     case 4:
         scnum (&num1, &num2);
         resultado = div (num1, num2);
-        printf ("El resultado de la division es %f\n", resultado);
-    default: printf ("error");
-            return 1;
+        printf ("El resultado de la division es %.2f\n", resultado);
+    default: 
         break;
     }
     } while (op < 1 || op > 4);
@@ -85,4 +84,3 @@ void scnum (float *n1, float *n2){
     scanf ("%f", &*n1);
     printf ("Ingrese el numero 2\n");
     scanf ("%f", &*n2);
-}
