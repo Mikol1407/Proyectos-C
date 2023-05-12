@@ -38,6 +38,7 @@ int main () {
         scnum (&num1, &num2);
         resultado = div (num1, num2);
         printf ("El resultado de la division es %.2f\n", resultado);
+        break;
     default: 
         break;
     }
@@ -84,3 +85,4 @@ void scnum (float *n1, float *n2){
     scanf ("%f", &*n1);
     printf ("Ingrese el numero 2\n");
     scanf ("%f", &*n2);
+}
