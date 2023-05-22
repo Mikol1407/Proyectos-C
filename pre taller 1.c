@@ -28,8 +28,7 @@ int main(){
             ceros = ceros +1;
         }
         for (j = 1; j <= num; j++){
-            band = num % j;
-            if (band == 0){
+            if (num % j == 0){
                 cont = cont + 1;
             }
             if (cont == 2){
@@ -41,6 +40,5 @@ int main(){
     printf ("Cantidad de impares: %d\n", cimpares);
     printf ("Cantidad de ceros: %d\n", ceros);
     printf ("Cantidad de primos: %d\n", cprimos);
-    getch ();
     return 0;
 }
