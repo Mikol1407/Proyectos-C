@@ -159,14 +159,18 @@ void juez (int *puntfinr, int *puntfina, int i, int *roundr, int *rounda){
 }
 
 int ptstotrojos (int pts1,int pts2,int pts3, float *totr){
+    float a;
+    a=3;
     totr = pts1 + pts2 + pts3;
-    totr = totr /3;
+    totr = totr / a;
     return totr;
 }
 
 int ptstotazul (int pts1,int pts2,int pts3, float *tota){
+    float a;
+    a=3;
     tota = pts1 + pts2 + pts3;
-    tota = tota /3;
+    tota = tota / a;
     return tota;
 }
 void tipowin (int g1, int g2, int g3, int *win){
