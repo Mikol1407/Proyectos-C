@@ -1,4 +1,5 @@
 #include <stdio.h>
+#define ganancia 100000
 
 void juez (int *puntfinr, int *puntfina, int i, int *roundr, int *rounda );
 float ptstotrojos (int pts1,int pts2,int pts3, float *totr);
@@ -9,7 +10,7 @@ void tipowin (int g1, int g2, int g3);
 int main (){
     
     int ptsrojo1 =0, ptsazul1=0, ptsrojo2=0, ptsazul2=0, ptsrojo3=0, ptsazul3=0, rondr1=0, ronda1=0, rondr2=0, ronda2=0, rondr3=0, ronda3=0, i=1;
-    int ganadorj1, ganadorj2, ganadorj3, cont =0;
+    int ganadorj1, ganadorj2, ganadorj3, cont =0, gain, lose  ;
     float puntos_totalesr = 0, puntos_totalesa =0, rounds_totalesr =0, rounds_totalesa=0;
     
     juez (&ptsrojo1, &ptsazul1, i, &rondr1, &ronda1);
@@ -39,11 +40,33 @@ int main (){
         ganadorj3 = 0;
     }
     tipowin (ganadorj1, ganadorj2, ganadorj3, &cont);
-    if (cont == 1 )
-    {
+    ptstotrojos (ptsrojo1, ptsrojo2, ptsrojo3, &puntos_totalesr);
+    ptstotazul (ptsazul1, ptsazul2, ptsazul3, &puntos_totalesa);
+    if (puntos_totalesr > puntos_totalesa){
+        switch (cont)
+        {
+        case 1:
+            gain = ganancia + (ganancia*0.10);
+            lose = ganancia - (ganancia*0.40);
+            printf ("el boxeador rojo gana %d", gain);
+            printf ("el boxeador azul gana %d", lose);
+            break;
+        case 2:
+            gain = ganancia + (ganancia*0.5);
+            lose = ganancia - (ganancia*0.40);
+            printf ("el boxeador rojo gana %d", gain);
+            printf ("el boxeador azul gana %d", lose);
+            break;
+        case 3:
+            gain = ganancia + (ganancia*0.15);
+            lose = ganancia - (ganancia*0.40);
+            printf ("el boxeador rojo gana %d", gain);
+            printf ("el boxeador azul gana %d", lose);
         
+        default:
+            break;
+        }
     }
-    
 }
 
 
