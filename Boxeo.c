@@ -1,13 +1,15 @@
 #include <stdio.h>
 
 void juez (int *puntfinr, int *puntfina, int i, int *roundr, int *rounda );
-float ptstotrojos (int pts1,int pts2,int pts3);
-float ptstotazul (int pts1,int pts2,int pts3);
+float ptstotrojos (int pts1,int pts2,int pts3, float *totr);
+float ptstotazul (int pts1,int pts2,int pts3, float *tota);
+void tipowin (int g1, int g2, int g3);
 
 
 int main (){
     
     int ptsrojo1 =0, ptsazul1=0, ptsrojo2=0, ptsazul2=0, ptsrojo3=0, ptsazul3=0, rondr1=0, ronda1=0, rondr2=0, ronda2=0, rondr3=0, ronda3=0, i=1;
+    int ganadorj1, ganadorj2, ganadorj3, cont =0;
     float puntos_totalesr = 0, puntos_totalesa =0, rounds_totalesr =0, rounds_totalesa=0;
     
     juez (&ptsrojo1, &ptsazul1, i, &rondr1, &ronda1);
@@ -15,6 +17,32 @@ int main (){
     juez (&ptsrojo2, &ptsazul2, i, &rondr2, &ronda2);
     i++;
     juez (&ptsrojo3, &ptsazul3, i, &rondr3, &ronda3);
+    if (ptsrojo1 > ptsazul1){
+        ganadorj1 = 1;
+    }else if ( ptsrojo1 == ptsazul1){
+         ganadorj1 = 2;
+    }else {
+        ganadorj1 = 0;
+    }
+    if (ptsrojo2 > ptsazul2){
+        ganadorj2 = 1;
+    }else if ( ptsrojo2 == ptsazul2){
+         ganadorj2 = 2;
+    }else {
+        ganadorj2= 0;
+    }
+    if (ptsrojo3 > ptsazul3){
+        ganadorj3 = 1;
+    }else if ( ptsrojo3 == ptsazul3){
+         ganadorj3 = 2;
+    }else {
+        ganadorj3 = 0;
+    }
+    tipowin (ganadorj1, ganadorj2, ganadorj3, &cont);
+    if (cont == 1 )
+    {
+        
+    }
     
 }
 
@@ -74,16 +102,25 @@ void juez (int *puntfinr, int *puntfina, int i, int *roundr, int *rounda){
     *rounda = conta;
 }
 
-int ptstotrojos (int pts1,int pts2,int pts3){
-    float total;
-    total = pts1 + pts2 + pts3;
-    total = total /3
-    return total;
+int ptstotrojos (int pts1,int pts2,int pts3, float *totr){
+    totr = pts1 + pts2 + pts3;
+    totr = totr /3;
+    return totr;
 }
 
-int ptstotazul (int pts1,int pts2,int pts3){
-    float total;
-    total = pts1 + pts2 + pts3;
-    total = total /3
-    return total;
+int ptstotazul (int pts1,int pts2,int pts3, float *tota){
+    tota = pts1 + pts2 + pts3;
+    tota = tota /3;
+    return tota;
+}
+void tipowin (int g1, int g2, int g3, int *win){
+    if (g1 == g2 && g2 == g3){
+        *win = 1;
+    }
+    if ((g1 == g2 && g2 != g3) || (g1 != g2 && g2 == g3) || (g1 == g3 && g2 != g1)){
+        *win = 2;
+    }
+    if ((g1 == g2 && g3 == 2)|| (g1 == g3 && g2 == 2) || (g1 == 2 && g2 == g3)){
+        *win = 3;
+    }
 }
