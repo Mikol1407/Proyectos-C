@@ -4,7 +4,7 @@
 void juez (int *puntfinr, int *puntfina, int i, int *roundr, int *rounda );
 float ptstotrojos (int pts1,int pts2,int pts3, float *totr);
 float ptstotazul (int pts1,int pts2,int pts3, float *tota);
-void tipowin (int g1, int g2, int g3);
+void tipowin (int g1, int g2, int g3, int *win);
 
 
 int main (){
@@ -46,27 +46,60 @@ int main (){
         switch (cont)
         {
         case 1:
+            printf ("Ganador boxeador rojo por UD");
             gain = ganancia + (ganancia*0.10);
             lose = ganancia - (ganancia*0.40);
             printf ("el boxeador rojo gana %d", gain);
             printf ("el boxeador azul gana %d", lose);
             break;
         case 2:
+            printf ("Ganador boxeador rojo por SD");
             gain = ganancia + (ganancia*0.5);
             lose = ganancia - (ganancia*0.40);
             printf ("el boxeador rojo gana %d", gain);
             printf ("el boxeador azul gana %d", lose);
             break;
         case 3:
+            printf ("Ganador boxeador rojo por MD");
             gain = ganancia + (ganancia*0.15);
             lose = ganancia - (ganancia*0.40);
             printf ("el boxeador rojo gana %d", gain);
             printf ("el boxeador azul gana %d", lose);
         
-        default:
+        default: return 1;
             break;
         }
     }
+    if (puntos_totalesr < puntos_totalesa){
+        switch (cont)
+        {
+        case 1:
+            printf ("Ganador boxeador azul por UD");
+            gain = ganancia + (ganancia*0.10);
+            lose = ganancia - (ganancia*0.40);
+            printf ("el boxeador azul gana %d", gain);
+            printf ("el boxeador rojo gana %d", lose);
+            break;
+        case 2:
+            printf ("Ganador boxeador azul por SD");
+            gain = ganancia + (ganancia*0.5);
+            lose = ganancia - (ganancia*0.40);
+            printf ("el boxeador azul gana %d", gain);
+            printf ("el boxeador rojo gana %d", lose);
+            break;
+        case 3:
+            printf ("Ganador boxeador azul por MD");
+            gain = ganancia + (ganancia*0.15);
+            lose = ganancia - (ganancia*0.40);
+            printf ("el boxeador azul gana %d", gain);
+            printf ("el boxeador rojo gana %d", lose);
+        
+        default: return 1;
+            break;
+        }
+    }
+    printf ("el boxeador rojo ganó %d rounds", ((rondr1+rondr2+rondr3)/3));
+    printf ("el boxeador azul ganó %d rounds", ((ronda1+ronda2+ronda3)/3));
 }
 
 
